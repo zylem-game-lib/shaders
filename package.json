@@ -1,0 +1,26 @@
+{
+  "name": "zylem-shaders",
+  "private": true,
+  "version": "0.1.2",
+  "type": "module",
+  "description": "WebGPU TSL shaders and showcase for the Zylem game framework.",
+  "license": "MIT",
+  "author": "Tim Cool",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zylem-game-lib/shaders.git"
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=10.32.1"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @zylem/shader-showcase dev",
+    "build": "pnpm -r run build",
+    "build:shaders": "pnpm --filter @zylem/shaders build",
+    "typecheck": "pnpm --filter @zylem/shaders typecheck",
+    "lint": "pnpm --filter @zylem/shaders lint",
+    "publish:shaders": "pnpm --filter @zylem/shaders publish --access public"
+  },
+  "packageManager": "pnpm@10.33.0"
+}

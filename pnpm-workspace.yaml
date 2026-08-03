@@ -1,0 +1,9 @@
+packages:
+  - 'packages/*'
+
+catalog:
+  '@zylem/ui': ^0.2.0
+
+overrides:
+  three: 0.185.1
+  '@types/three': 0.185.1

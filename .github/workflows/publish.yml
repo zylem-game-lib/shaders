@@ -1,0 +1,52 @@
+name: Publish @zylem/shaders
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run npm publish with --dry-run'
+        type: boolean
+        default: true
+
+jobs:
+  publish:
+    name: Build and publish @zylem/shaders
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: pnpm/action-setup@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@zylem'
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shaders
+        run: pnpm build:shaders
+        env:
+          NODE_ENV: production
+
+      - name: Publish to npm (dry run)
+        if: github.event_name == 'workflow_dispatch' && inputs.dry_run == true
+        working-directory: packages/shaders
+        run: pnpm publish --access public --dry-run --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish to npm
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run == false)
+        working-directory: packages/shaders
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
