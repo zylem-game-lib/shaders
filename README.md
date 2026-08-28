@@ -84,8 +84,35 @@ Effects implement `ZylemPostEffect` — `(inputNode, { scenePass, scene, camera 
 
 `createPixelationEffect` and `createRetroEffect` are *pass-replacing* effects: they render their own scene pass (for extra channels or altered rasterization) rather than transforming the incoming node, so place them first in the `postProcessingEffects` array.
 
-## Build
+## Install
 
 ```sh
-pnpm --filter @zylem/shaders build
+pnpm add @zylem/shaders three
 ```
+
+`three` is a peer dependency: the library and `@zylem/game-lib` must share a single Three.js copy, because TSL nodes are not interchangeable across copies.
+
+## Repository
+
+This repo is the library itself — `src/` builds to the published `dist/` — plus a
+nested [`showcase/`](./showcase) Solid/Vite app that exercises every shader on top
+of `@zylem/game-lib`. The showcase resolves `@zylem/shaders` to source, so shader
+edits hot-reload without rebuilding.
+
+Requires Node >= 22.12.0, pnpm >= 10.32.1, and a WebGPU-capable browser for the
+showcase.
+
+```sh
+pnpm install
+
+pnpm build          # bundle the library to dist/
+pnpm dev            # rebuild the library on change
+pnpm typecheck
+pnpm lint
+
+pnpm showcase:dev   # showcase on http://localhost:3332
+pnpm showcase:build
+```
+
+The showcase deploys as a Render static site (see [`render.yaml`](./render.yaml));
+the library publishes to npm from `.github/workflows/publish.yml` on a `v*` tag.

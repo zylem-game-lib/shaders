@@ -1,0 +1,16 @@
+# Blueprint: Render Static Site for the shader showcase. The library at the repo
+# root is not deployed here; it ships to npm from .github/workflows/publish.yml.
+services:
+  - type: web
+    name: zylem-shader-showcase
+    runtime: static
+    buildCommand: pnpm install --frozen-lockfile && pnpm --filter @zylem/shader-showcase build
+    staticPublishPath: showcase/dist
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: "22.12.0"
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

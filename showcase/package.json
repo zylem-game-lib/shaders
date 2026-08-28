@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "description": "Showcase app for @zylem/shaders demos, built on @zylem/game-lib.",
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=10.32.1"
+  },
   "scripts": {
     "dev": "vite --host",
     "build": "cross-env NODE_ENV=production vite build",
@@ -12,9 +16,10 @@
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.11.2",
     "@solidjs/router": "^0.14.10",
-    "@zylem/game-lib": "^0.8.3",
-    "@zylem/shaders": "workspace:*",
-    "@zylem/ui": "catalog:",
+    "@zylem/behaviors": "link:../../behaviors",
+    "@zylem/game-lib": "link:../../zylem/packages/game-lib",
+    "@zylem/shaders": "link:..",
+    "@zylem/ui": "link:../../zylem-ui",
     "howler": "^2.2.4",
     "nanoid": "^5.1.16",
     "solid-js": "^1.9.14",

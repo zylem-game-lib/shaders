@@ -20,5 +20,5 @@
     "isolatedModules": true,
     "resolveJsonModule": true
   },
-  "exclude": ["node_modules", "dist", "packages/**/dist", "packages/**/node_modules"]
+  "exclude": ["node_modules", "dist", "showcase/dist", "showcase/node_modules"]
 }

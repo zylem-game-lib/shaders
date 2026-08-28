@@ -1,5 +1,5 @@
 packages:
-  - 'packages/*'
+  - 'showcase'
 
 catalog:
   '@zylem/ui': ^0.2.0
@@ -7,3 +7,6 @@ catalog:
 overrides:
   three: 0.185.1
   '@types/three': 0.185.1
+  # @zylem/game-lib 0.8.4 shipped to npm with an unresolvable `workspace:*`
+  # spec for @zylem/bridge. Drop this once game-lib republishes a real range.
+  '@zylem/game-lib>@zylem/bridge': ^0.1.1
