@@ -3,7 +3,7 @@ import { defineConfig } from 'tsup';
 const isProd = process.env.NODE_ENV === 'production';
 const sourcemap = process.env.SOURCEMAP === '1' || !isProd;
 
-export default defineConfig({
+export default defineConfig((options) => ({
 	entry: {
 		index: 'src/index.ts',
 		postprocessing: 'src/postprocessing/index.ts',
@@ -15,7 +15,9 @@ export default defineConfig({
 	tsconfig: './tsconfig.build.json',
 	splitting: true,
 	sourcemap,
-	clean: true,
+	// In watch mode tsup would empty `dist` on every rebuild, and a consumer's
+	// Vite sees a delete-then-add instead of a change (`zw dev` watch loop).
+	clean: !options.watch,
 	minify: isProd,
 	outDir: 'dist',
 	// Never bundle Three.js or tsl-textures. Consumers must share a single
@@ -25,4 +27,4 @@ export default defineConfig({
 	outExtension() {
 		return { js: '.js' };
 	},
-});
+}));

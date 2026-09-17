@@ -2,12 +2,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
+import { zylemVersionsPlugin } from '@zylem/ui/vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const devPort = Number(process.env.PORT ?? '3332');
 
 export default defineConfig({
-	plugins: [solidPlugin()] as any,
+	plugins: [zylemVersionsPlugin(__dirname), solidPlugin()] as any,
 	build: {
 		target: 'esnext',
 	},
