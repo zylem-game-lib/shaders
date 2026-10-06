@@ -51,8 +51,8 @@ importers:
         specifier: ^0.8.9
         version: 0.8.9(three@0.185.1)
       '@zylem/game-lib':
-        specifier: ^0.8.8
-        version: 0.8.8(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)
+        specifier: ^0.9.4
+        version: 0.9.4(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)
       '@zylem/shaders':
         specifier: link:..
         version: link:..
@@ -953,8 +953,8 @@ packages:
   '@zylem/bridge@0.1.4':
     resolution: {integrity: sha512-PBOeggDw4NEdQ74j5eFkphyAYYRDUyKmjG7N4WR3kDxOg0oqdJ5+Hhk7GyJ1b0gvez4/Wk5a5mX25/VNy1B7MQ==}
 
-  '@zylem/game-lib@0.8.8':
-    resolution: {integrity: sha512-0xJyRUVExiEMmMJiBDvJYCX6/o1VZGUF38hBVyORZV4F0Vt9BP2x7fWw4CU6loeURNjg+YupE1thsb1ooa5uig==}
+  '@zylem/game-lib@0.9.4':
+    resolution: {integrity: sha512-FQKwT+LXKz+T5i80Oo7yTPxXXSDH7QET31PProY9tiC8QQ20EbGwfYyLTfPXbdIi2DwrHSwTzj+p+AFXNv+/6w==}
     peerDependencies:
       howler: ^2.2.4
       nanoid: ^5.1.5
@@ -981,6 +981,10 @@ packages:
 
   any-promise@1.3.0:
     resolution: {integrity: sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==}
+
+  automation-events@7.1.19:
+    resolution: {integrity: sha512-cD+TLhJTI0q4AI3ktd353lrGZiVa9AchowSDzQzzGjSoYe22js4vlS32VUtWuaulghi1Yq0KYNWKk9wWuGymPA==}
+    engines: {node: '>=18.2.0'}
 
   babel-plugin-jsx-dom-expressions@0.40.7:
     resolution: {integrity: sha512-/O6JWUmjv03OI9lL2ry9bUjpD5S3PclM55RRJEyCdcFZ5W2SEA/59d+l2hNsk3gI6kiWRdRPdOtqZmsQzFN1pQ==}
@@ -1348,6 +1352,9 @@ packages:
     resolution: {integrity: sha512-i5uvt8C3ikiWeNZSVZNWcfZPItFQOsYTUAOkcUPGd8DqDy1uOUikjt5dG+uRlwyvR108Fb9DOd4GvXfT0N2/uQ==}
     engines: {node: '>= 12'}
 
+  standardized-audio-context@25.3.77:
+    resolution: {integrity: sha512-Ki9zNz6pKcC5Pi+QPjPyVsD9GwJIJWgryji0XL9cAJXMGyn+dPOf6Qik1AHei0+UNVcc4BOCa0hWLBzlwqsW/A==}
+
   stats.js@0.17.0:
     resolution: {integrity: sha512-hNKz8phvYLPEcRkeG1rsGmV5ChMjKDAWU7/OJJdDErPBNChQXxCo3WZurGpnWc6gZhAzEPFad1aVgyOANH1sMw==}
 
@@ -1372,6 +1379,9 @@ packages:
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
+
+  tone@15.5.57:
+    resolution: {integrity: sha512-sRdRh8MGzYjnPkWoR+Y0dUSI8nkpZQ+rtPGyyD5BzEYvCcmyPJIgC3Fw+XnrDiqb8BgRqwicr/4TV0gL1DzelQ==}
 
   tree-kill@1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
@@ -2159,7 +2169,7 @@ snapshots:
 
   '@zylem/bridge@0.1.4': {}
 
-  '@zylem/game-lib@0.8.8(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)':
+  '@zylem/game-lib@0.9.4(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)':
     dependencies:
       '@dgreenheck/three-pinata': 2.0.1(three@0.185.1)
       '@sinclair/typebox': 0.34.52
@@ -2173,6 +2183,7 @@ snapshots:
       nanoid: 5.1.16
       stats.js: 0.17.0
       three: 0.185.1
+      tone: 15.5.57
       typescript-fsm: 1.6.0
       valtio: 2.3.2
     transitivePeerDependencies:
@@ -2196,6 +2207,11 @@ snapshots:
   acorn@8.18.0: {}
 
   any-promise@1.3.0: {}
+
+  automation-events@7.1.19:
+    dependencies:
+      '@babel/runtime': 7.29.7
+      tslib: 2.8.1
 
   babel-plugin-jsx-dom-expressions@0.40.7(@babel/core@7.29.7):
     dependencies:
@@ -2562,6 +2578,12 @@ snapshots:
 
   source-map@0.7.6: {}
 
+  standardized-audio-context@25.3.77:
+    dependencies:
+      '@babel/runtime': 7.29.7
+      automation-events: 7.1.19
+      tslib: 2.8.1
+
   stats.js@0.17.0: {}
 
   sucrase@3.35.1:
@@ -2590,6 +2612,11 @@ snapshots:
     dependencies:
       fdir: 6.5.0(picomatch@4.0.5)
       picomatch: 4.0.5
+
+  tone@15.5.57:
+    dependencies:
+      standardized-audio-context: 25.3.77
+      tslib: 2.8.1
 
   tree-kill@1.2.2: {}
 
