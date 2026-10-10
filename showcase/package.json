@@ -19,7 +19,7 @@
     "@zylem/behaviors": "^0.8.9",
     "@zylem/game-lib": "^0.9.4",
     "@zylem/shaders": "link:..",
-    "@zylem/ui": "^0.8.8",
+    "@zylem/ui": "^0.8.13",
     "howler": "^2.2.4",
     "nanoid": "^5.1.16",
     "solid-js": "^1.9.14",
