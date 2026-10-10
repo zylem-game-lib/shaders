@@ -46,6 +46,22 @@ All factories accept an options object and return the shader with a `uniforms` b
 
 `createWaterSurface` also returns a `positionNode` that displaces vertices by the wave heightfield, so apply it to a subdivided plane (e.g. `createPlane({ subdivisions: 160, ... })`). Set `waveAmplitude: 0` for a flat, normal-mapped-only surface, and pass `envMap` (a cube texture) to reflect an environment instead of the built-in horizon/zenith sky gradient.
 
+## Ability effects
+
+Eight TSL effects adapted from [AbilityCastingThreeJS](https://github.com/achrefelouafi/AbilityCastingThreeJS):
+`createAbilitySigil`, `createAbilityPortal`, `createAbilityBeam`,
+`createAbilityLightning`, `createAbilityFlame`, `createAbilityBurst`,
+`createAbilityAura`, and `createAbilityCrystal`.
+
+These simplified effects use bounded noise detail and optionally share a small
+lookup from `createAbilityNoiseTexture()`. See [usage, source mapping and
+performance tradeoffs](docs/ability-effects.md) and the **Ability Effects**
+showcase section. Speedups require device measurements; these interpretations
+intentionally reduce visual complexity. MIT attribution ships in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+For future ideas, see [100 SNES, N64 and PSX effects](docs/retro-game-effects.md).
+
 ## Shadertoy transpiler
 
 Turn raw Shadertoy GLSL into a consumable shader at runtime (wraps the three.js addons `Transpiler` + `ShaderToyDecoder` + `TSLEncoder`):

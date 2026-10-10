@@ -14,6 +14,7 @@ const allModules = import.meta.glob('./demos/*/*.ts');
 export const SECTION_ORDER = [
 	'Backgrounds',
 	'Surface Materials',
+	'Ability Effects',
 	'Shadertoy',
 	'Postprocessing',
 	'Transitions',
@@ -33,6 +34,7 @@ const SECTION_BY_DEMO: Record<SectionName, readonly string[]> = {
 		'foliage',
 		'holographic',
 	],
+	'Ability Effects': ['ability-sigil', 'ability-portal', 'ability-beam', 'ability-lightning', 'ability-flame', 'ability-burst', 'ability-aura', 'ability-crystal'],
 	Shadertoy: ['shadertoy-gallery'],
 	Postprocessing: ['afterimage', 'vhs-grain', 'pixelation', 'retro'],
 	Transitions: ['stage-transition'],
