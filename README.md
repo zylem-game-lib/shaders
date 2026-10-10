@@ -130,5 +130,8 @@ pnpm showcase:dev   # showcase on http://localhost:3332
 pnpm showcase:build
 ```
 
+The showcase uses Vite's module-runner config loader to transform the
+TypeScript plugin exported by `@zylem/ui/vite` on Node 22.12.
+
 The showcase deploys as a Render static site (see [`render.yaml`](./render.yaml));
 the library publishes to npm from `.github/workflows/publish.yml` on a `v*` tag.

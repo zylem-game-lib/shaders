@@ -9,9 +9,9 @@
     "pnpm": ">=10.32.1"
   },
   "scripts": {
-    "dev": "vite --host",
-    "build": "cross-env NODE_ENV=production vite build",
-    "preview": "vite preview"
+    "dev": "vite --host --configLoader runner",
+    "build": "cross-env NODE_ENV=production vite build --configLoader runner",
+    "preview": "vite preview --configLoader runner"
   },
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.11.2",
