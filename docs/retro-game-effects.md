@@ -34,7 +34,7 @@ modern implementation. This is an ideas catalog, not 100 implemented factories.
 | 21 | PSI attack overlay — EarthBound | Play bold geometric color patterns over the battle view, synchronized with the attack's hit sequence. |
 | 22 | Layered rain — Donkey Kong Country | Scroll diagonal rain streaks over the jungle in multiple layers, with independent density and wind direction. |
 | 23 | Snowstorm depth layers — Donkey Kong Country | Move several layers of snow at different sizes and speeds so the storm appears to occupy depth around the player. |
-| 24 | Sunset silhouettes — Donkey Kong Country | Darken foreground scenery against a warm sky gradient to emphasize the rope-bridge skyline and depth. |
+| 24 | Sunset silhouettes — Donkey Kong Country | Darken foreground scenery against a warm sky gradient to emphasize the jungle skyline and depth. |
 | 25 | Bramble depth parallax — Donkey Kong Country 2 | Scroll background and foreground bramble layers at different rates as the camera tracks the player. |
 | 26 | Rotating room — Super Castlevania IV | Rotate the room imagery around the player while maintaining a stable focal point for navigation. |
 | 27 | Rotating tunnel — Super Castlevania IV | Rotate a repeating cylindrical-looking background around the corridor axis to suggest travel through a spinning tunnel. |
@@ -99,7 +99,7 @@ modern implementation. This is an ideas catalog, not 100 implemented factories.
 | 76 | Gunblade hit flash — Final Fantasy VIII | Add a timed bright burst at sword contact when the trigger input strengthens the attack. |
 | 77 | Trance aura — Final Fantasy IX | Surround the character with a pulsing colored glow and upward particles during the Trance state. |
 | 78 | Mist atmosphere — Final Fantasy IX | Layer low-contrast fog over distant scenery and around terrain to communicate the world's pervasive Mist. |
-| 79 | Summoning glyph — Final Fantasy IX | Place a luminous patterned circle beneath or around the summoner during the summon's opening pose. |
+| 79 | Holy light pillars — Final Fantasy IX | Raise bright vertical shafts around the selected target, timed to the spell's impact and fade. |
 | 80 | Alucard movement afterimages — Castlevania: Symphony of the Night | Leave tinted, quickly fading copies of the character sprite at recent positions during rapid movement. |
 | 81 | Mist-form character — Symphony of the Night | Replace the solid sprite with a soft drifting vapor cluster that follows the character's movement. |
 | 82 | Shield spell flare — Symphony of the Night | Brighten the shield and overlay a short magical emblem or burst when a shield spell activates. |
@@ -120,7 +120,7 @@ modern implementation. This is an ideas catalog, not 100 implemented factories.
 | 97 | Colored distance backdrop — Spyro the Dragon | Blend distant scenery into a coordinated sky/fog palette to create depth without losing the landscape's color identity. |
 | 98 | Quake weapon wave — WipEout 2097 / XL | Propagate a visible disturbance along the race track ahead of the craft, timed to the traveling attack. |
 | 99 | Spectral world morph — Legacy of Kain: Soul Reaver | Interpolate scenery geometry and color grading as the world changes between material and spectral realms. |
-| 100 | Burning torch / flare illumination — Tomb Raider II | Attach a warm flickering light and small flame/spark particles to a held flare, with illumination fading as it expires. |
+| 100 | Flare illumination — Tomb Raider II | Attach a warm flickering light and small flame/spark particles to a held flare, with illumination fading as it expires. |
 
 ## Reference scope
 
