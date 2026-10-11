@@ -20,7 +20,8 @@ complete scripted sequences. No original game art is included.
 
 The catalog still contains exactly 100 ideas. This page documents the first
 eight components; the [second batch](retro-effects-batch-2.md) adds eight more,
-bringing coverage to 16 entries. Existing ability effects can supply parts of
+and the [third batch](retro-effects-batch-3.md) adds 25, bringing total coverage
+to 41 entries. Existing ability effects can supply parts of
 later spells, but are not counted as complete catalog implementations.
 
 ## Material usage
