@@ -158,3 +158,10 @@ export {
 export {
 	createIrisTransition, type IrisTransitionOptions, type IrisTransitionUniforms, type IrisTransition,
 } from './shaders/iris-transition.tsl';
+
+// Retro catalog batch 3: 22 materials and a battle-entry transition.
+export type { RetroVfxOptions, RetroVfxUniforms } from './shaders/retro-catalog-common.tsl';
+export * from './shaders/retro-energy.tsl';
+export * from './shaders/retro-environment.tsl';
+export * from './shaders/retro-surfaces.tsl';
+export * from './shaders/battle-swirl.tsl';

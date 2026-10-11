@@ -30,3 +30,5 @@ export {
 	createThermalVisionEffect, type ThermalVisionOptions, type ThermalVisionUniforms, type ThermalVisionEffect,
 	createChaffInterferenceEffect, type ChaffInterferenceOptions, type ChaffInterferenceUniforms, type ChaffInterferenceEffect,
 } from './retro-vision';
+
+export * from './retro-reveal';

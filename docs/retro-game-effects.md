@@ -9,10 +9,11 @@ modern implementation. This is an ideas catalog, not 100 implemented factories.
 
 ## Implementation progress
 
-**16 of 100 entries have reusable components and showcase demos:**
+**41 of 100 entries have reusable components and showcase demos:**
 
 - [First batch](retro-effects.md): **#1, #2, #12, #17, #20, #35, #36 and #87**.
 - [Second batch](retro-effects-batch-2.md): **#3, #7, #16, #38, #55, #62, #86 and #88**.
+- [Third batch: 25 effects](retro-effects-batch-3.md): **#6, #14, #19, #21, #22, #23, #24, #27, #30, #31, #33, #39, #42, #43, #44, #48, #60, #65, #66, #68, #79, #81, #91, #96 and #98**.
 
 “Implemented” means the documented material/screen component, not a complete
 recreation of the game's scripted sequence. Visual review and GPU timing remain

@@ -1,7 +1,8 @@
 # Retro effects: second implementation batch
 
 Eight more components from the [100-effect catalog](retro-game-effects.md),
-bringing coverage to **16 catalog entries**. These are original visual
+bringing coverage after this batch to **16 catalog entries**. The
+[third batch](retro-effects-batch-3.md) adds 25 more for a total of **41**. These are original visual
 interpretations; no original game code or art is included.
 
 | Catalog | Factory | Application | Work and limits |

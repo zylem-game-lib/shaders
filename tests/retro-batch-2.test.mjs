@@ -3,43 +3,12 @@
  * This catches missing node methods, stage misuse and optional-branch failures
  * that tsc/bundling cannot see. It does not validate WGSL on a GPU or render pixels.
  */
-import assert from 'node:assert/strict';
 import test from 'node:test';
-import { DataTexture, Mesh, NoToneMapping, PerspectiveCamera, PlaneGeometry, Scene } from 'three';
-import { MeshBasicNodeMaterial, WebGPURenderer } from 'three/webgpu';
+import { DataTexture, PerspectiveCamera, Scene } from 'three';
+import { buildGraph } from './helpers/wgsl.mjs';
 import { float, uniform, vec4 } from 'three/tsl';
 import { createBlobShadow, createHitSpark, createIrisTransition, createRainbowRoad, createWaterRipple } from '../dist/index.js';
 import { createChaffInterferenceEffect, createLanternConeEffect, createThermalVisionEffect } from '../dist/postprocessing.js';
-
-function buildGraph(shader) {
-	const renderer = new WebGPURenderer({
-		canvas: { width: 320, height: 180, style: {}, addEventListener() {}, removeEventListener() {} },
-	});
-	renderer.toneMapping = NoToneMapping;
-	// Baseline feature profile for source generation only; no device is requested.
-	renderer.hasFeature = () => false;
-	const material = new MeshBasicNodeMaterial();
-	for (const key of ['colorNode', 'positionNode', 'transparent', 'blending', 'side']) {
-		if (shader[key] !== undefined) material[key] = shader[key];
-	}
-	const geometry = new PlaneGeometry();
-	const mesh = new Mesh(geometry, material);
-	// Use the backend's builder to share the same TSL registry as three/webgpu.
-	const builder = renderer.backend.createNodeBuilder(mesh, renderer);
-	builder.scene = new Scene();
-	builder.camera = new PerspectiveCamera();
-	try {
-		builder.build();
-		assert.match(builder.vertexShader, /@vertex/);
-		assert.match(builder.fragmentShader, /@fragment/);
-		assert.doesNotMatch(builder.vertexShader, /\bfwidth\(/, 'derivatives must remain in the fragment stage');
-		assert.doesNotMatch(builder.fragmentShader, /\b(?:undefined|NaN|Infinity)\b/);
-	} finally {
-		geometry.dispose();
-		material.dispose();
-		// Renderer was never initialized: it has no device/resources to dispose.
-	}
-}
 
 for (const [name, factory] of Object.entries({ createWaterRipple, createBlobShadow, createRainbowRoad, createHitSpark })) {
 	test(name + ' generates vertex and fragment WGSL', () => buildGraph(factory()));
