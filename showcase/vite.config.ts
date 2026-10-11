@@ -56,8 +56,7 @@ export default defineConfig({
 			// polyrepo dirs when zw-linked.
 			allow: [
 				path.resolve(__dirname, '..'),
-				path.resolve(__dirname, '../../behaviors'),
-				path.resolve(__dirname, '../../runtime'),
+				path.resolve(__dirname, '../../simulation'),
 				path.resolve(__dirname, '../../zylem'),
 			],
 		},
