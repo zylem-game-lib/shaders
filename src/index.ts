@@ -165,3 +165,11 @@ export * from './shaders/retro-energy.tsl';
 export * from './shaders/retro-environment.tsl';
 export * from './shaders/retro-surfaces.tsl';
 export * from './shaders/battle-swirl.tsl';
+
+// Retro catalog completion: material, transition and bounded motion components.
+export * from './shaders/retro-projection.tsl';
+export * from './shaders/retro-morph.tsl';
+export * from './shaders/retro-spells.tsl';
+export * from './shaders/retro-world-transitions.tsl';
+export * from './shaders/retro-particles';
+export * from './shaders/retro-trails';

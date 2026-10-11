@@ -32,3 +32,4 @@ export {
 } from './retro-vision';
 
 export * from './retro-reveal';
+export * from './xray-scope';

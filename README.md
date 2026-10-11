@@ -62,18 +62,22 @@ intentionally reduce visual complexity. MIT attribution ships in
 
 ## Retro game effects
 
-Forty-one effects from the [100-effect catalog](docs/retro-game-effects.md)
+All 100 effects from the [100-effect catalog](docs/retro-game-effects.md)
 have components with controls in the **Retro Game Effects** showcase section:
 palette cycling, ghost transparency, Power Bomb expansion, battle backdrop,
 painting ripples, matcap metal, Fuzzy screen warp, night vision, iris wipe,
 lantern cone, water ripple, blob shadow, rainbow road, hit spark, thermal vision
 and chaff interference. The [third batch](docs/retro-effects-batch-3.md) adds
 25 more: weather and mist layers, charge and spell visuals, character materials,
-reveal effects, a battle-entry swirl, and corridor/track deformation.
+reveal effects, a battle-entry swirl, and corridor/track deformation. The
+[completion batch](docs/retro-effects-completion.md) adds the remaining 59,
+including bounded particle systems, afterimages, sword trails, map projection,
+camouflage, spells, transformations and scene transitions.
 
 See [first-batch usage](docs/retro-effects.md) and
 [second-batch usage](docs/retro-effects-batch-2.md), plus
-[third-batch factories, costs and limitations](docs/retro-effects-batch-3.md).
+[third-batch factories](docs/retro-effects-batch-3.md) and
+[completion usage, costs and limitations](docs/retro-effects-completion.md).
 Materials and transitions import from `@zylem/shaders`; screen effects import from
 `@zylem/shaders/postprocessing`. These are original visual interpretations;
 GPU speedups and original-game fidelity have not been measured.
