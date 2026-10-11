@@ -28,5 +28,8 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
+      - name: Generate retro shader WGSL
+        run: pnpm test:shaders
+
       - name: Build showcase
         run: pnpm showcase:build

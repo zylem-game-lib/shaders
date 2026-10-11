@@ -24,3 +24,9 @@ export {
 	createFuzzyScreenEffect, type FuzzyScreenOptions, type FuzzyScreenUniforms, type FuzzyScreenEffect,
 	createNightVisionEffect, type NightVisionOptions, type NightVisionUniforms, type NightVisionEffect,
 } from './retro-game';
+
+export {
+	createLanternConeEffect, type LanternConeOptions, type LanternConeUniforms, type LanternConeEffect,
+	createThermalVisionEffect, type ThermalVisionOptions, type ThermalVisionUniforms, type ThermalVisionEffect,
+	createChaffInterferenceEffect, type ChaffInterferenceOptions, type ChaffInterferenceUniforms, type ChaffInterferenceEffect,
+} from './retro-vision';
