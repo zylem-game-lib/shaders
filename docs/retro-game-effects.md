@@ -7,6 +7,14 @@ the original games' rendering code. These consoles used palettes, sprites,
 fixed-function rendering and geometry tricks; “shader” here means a possible
 modern implementation. This is an ideas catalog, not 100 implemented factories.
 
+## Implementation progress
+
+The [first batch of eight effects](retro-effects.md) implements reusable
+components for **#1, #2, #12, #17, #20, #35, #36 and #87**, with showcase demos.
+“Implemented” means the documented material/screen component, not a complete
+recreation of the game's scripted sequence. Visual review and GPU timing remain
+pending. The other entries remain ideas.
+
 ## SNES (1–34)
 
 | # | Effect / game reference | How it is applied |

@@ -60,7 +60,17 @@ showcase section. Speedups require device measurements; these interpretations
 intentionally reduce visual complexity. MIT attribution ships in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-For future ideas, see [100 SNES, N64 and PSX effects](docs/retro-game-effects.md).
+## Retro game effects
+
+The first eight effects from the [100-effect catalog](docs/retro-game-effects.md)
+are available with controls in the **Retro Game Effects** showcase section:
+palette cycling, ghost transparency, Power Bomb expansion, battle backdrop,
+painting ripples, matcap metal, Fuzzy screen warp and night vision.
+
+See [factories, usage, costs and limitations](docs/retro-effects.md).
+Materials import from `@zylem/shaders`; the two screen effects import from
+`@zylem/shaders/postprocessing`. These are original visual interpretations;
+GPU speedups and original-game fidelity have not been measured.
 
 ## Shadertoy transpiler
 

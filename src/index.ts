@@ -135,3 +135,16 @@ export {
 	type AfterimageEffect,
 	type AfterimageOptions,
 } from './postprocessing/afterimage';
+
+// Retro game catalog: first implementation batch
+export type { RetroAnimationOptions, RetroAnimationUniforms } from './shaders/retro-common.tsl';
+export {
+	createPaletteCycle, type PaletteCycleOptions, type PaletteCycleUniforms,
+	createGhost, type GhostOptions, type GhostUniforms,
+	createRetroMetal, type RetroMetalOptions, type RetroMetalUniforms,
+} from './shaders/retro-character.tsl';
+export {
+	createPowerBomb, type PowerBombOptions, type PowerBombUniforms,
+	createBattleBackdrop, type BattleBackdropOptions, type BattleBackdropUniforms,
+	createPaintingRipple, type PaintingRippleOptions, type PaintingRippleUniforms,
+} from './shaders/retro-world.tsl';
