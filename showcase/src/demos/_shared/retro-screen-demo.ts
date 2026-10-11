@@ -1,14 +1,25 @@
 import { createCamera, createGame, createStage, Perspectives } from '@zylem/game-lib/core';
 import { createBox, createLight, createSphere } from '@zylem/game-lib/entity';
-import { createFuzzyScreenEffect, createNightVisionEffect } from '@zylem/shaders/postprocessing';
+import { createFuzzyScreenEffect, createNightVisionEffect, createLanternConeEffect, createThermalVisionEffect, createChaffInterferenceEffect } from '@zylem/shaders/postprocessing';
 import { Color } from 'three';
 import type { ShowcaseControl, ShowcaseDemo } from '../../demo-types';
-import { rangeControl } from './controls';
+import { colorControl, rangeControl } from './controls';
 
-export type RetroScreenKind = 'fuzzy-screen' | 'night-vision';
+export type RetroScreenKind = 'fuzzy-screen' | 'night-vision' | 'lantern-cone' | 'thermal-vision' | 'chaff-interference';
+
+const descriptions: Record<RetroScreenKind, string> = {
+	'fuzzy-screen': '#17 · Fuzzy intoxication screen warp. Two animated wave offsets and one input sample; Strength 0 restores the scene.',
+	'night-vision': '#87 · Night vision. Green luminance, exposure lift, fine grain and vignette; Strength 0 restores the scene.',
+	'lantern-cone': '#7 · Lantern visibility cone. Rotate its facing and move its screen-space origin. This mask does not calculate world-space occlusion.',
+	'thermal-vision': '#86 · Thermal palette. This demo uses scene luminance as a proxy; supply a heatTexture for game-defined target temperatures.',
+	'chaff-interference': '#88 · Chaff interference. Animated static and row dropouts over an electronic feed. Strength 0 restores the scene.',
+};
 
 export function retroScreenDemo(kind: RetroScreenKind): ShowcaseDemo {
-	const fx = kind === 'fuzzy-screen' ? createFuzzyScreenEffect() : createNightVisionEffect();
+	const fx = kind === 'fuzzy-screen' ? createFuzzyScreenEffect()
+		: kind === 'night-vision' ? createNightVisionEffect()
+		: kind === 'lantern-cone' ? createLanternConeEffect()
+		: kind === 'thermal-vision' ? createThermalVisionEffect() : createChaffInterferenceEffect();
 	const u = fx.uniforms;
 	const camera = createCamera({
 		perspective: Perspectives.ThirdPerson,
@@ -39,13 +50,20 @@ export function retroScreenDemo(kind: RetroScreenKind): ShowcaseDemo {
 		['strength', 0, 1, 0.01], ['speed', 0, 3, 0.05], ['amplitude', 0, 0.1, 0.001],
 		['frequency', 0.5, 10, 0.1], ['gain', 0, 6, 0.05],
 		['grain', 0, 0.2, 0.005], ['vignette', 0, 1, 0.01],
+		['angle', 0, Math.PI * 2, 0.01], ['halfAngle', 0.05, Math.PI - 0.05, 0.01],
+		['radius', 0.05, 1.5, 0.01], ['ambient', 0, 1, 0.01],
+		['bias', -1, 1, 0.01], ['blockSize', 1, 16, 1], ['dropout', 0, 1, 0.01],
 	] as const) {
 		if (u[name]) controls.push(rangeControl(name, u[name], min, max, step));
 	}
+	if (u.color) controls.push(colorControl('Static color', u.color));
+	if (u.center) {
+		for (const axis of ['x', 'y'] as const) {
+			controls.push({ type: 'range', label: 'Center ' + axis, min: 0, max: 1, step: 0.01, value: u.center.value[axis], onChange: value => { u.center.value[axis] = value; } });
+		}
+	}
 	return {
 		game: createGame({ id: 'shader-showcase-' + kind }, stage), controls,
-		description: kind === 'fuzzy-screen'
-			? '#17 · Fuzzy intoxication screen warp. Two animated wave offsets and one input sample; Strength 0 restores the scene.'
-			: '#87 · Night vision. Green luminance, exposure lift, fine grain and vignette; Strength 0 restores the scene.',
+		description: descriptions[kind],
 	};
 }

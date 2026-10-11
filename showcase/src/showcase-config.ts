@@ -36,7 +36,7 @@ const SECTION_BY_DEMO: Record<SectionName, readonly string[]> = {
 		'holographic',
 	],
 	'Ability Effects': ['ability-sigil', 'ability-portal', 'ability-beam', 'ability-lightning', 'ability-flame', 'ability-burst', 'ability-aura', 'ability-crystal'],
-	'Retro Game Effects': ['palette-cycle', 'ghost', 'power-bomb', 'battle-backdrop', 'painting-ripple', 'retro-metal', 'fuzzy-screen', 'night-vision'],
+	'Retro Game Effects': ['palette-cycle', 'ghost', 'power-bomb', 'battle-backdrop', 'painting-ripple', 'retro-metal', 'fuzzy-screen', 'night-vision', 'iris-wipe', 'lantern-cone', 'water-ripple', 'blob-shadow', 'rainbow-road', 'hit-spark', 'thermal-vision', 'chaff-interference'],
 	Shadertoy: ['shadertoy-gallery'],
 	Postprocessing: ['afterimage', 'vhs-grain', 'pixelation', 'retro'],
 	Transitions: ['stage-transition'],

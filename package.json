@@ -44,6 +44,7 @@
     "dev": "tsup --watch",
     "lint": "biome check src",
     "typecheck": "tsc --noEmit",
+    "test:shaders": "node --test tests/retro-batch-2.test.mjs",
     "showcase:dev": "pnpm --filter @zylem/shader-showcase dev",
     "showcase:build": "pnpm --filter @zylem/shader-showcase build",
     "showcase:preview": "pnpm --filter @zylem/shader-showcase preview"

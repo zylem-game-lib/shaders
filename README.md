@@ -62,13 +62,16 @@ intentionally reduce visual complexity. MIT attribution ships in
 
 ## Retro game effects
 
-The first eight effects from the [100-effect catalog](docs/retro-game-effects.md)
-are available with controls in the **Retro Game Effects** showcase section:
+Sixteen effects from the [100-effect catalog](docs/retro-game-effects.md)
+have components with controls in the **Retro Game Effects** showcase section:
 palette cycling, ghost transparency, Power Bomb expansion, battle backdrop,
-painting ripples, matcap metal, Fuzzy screen warp and night vision.
+painting ripples, matcap metal, Fuzzy screen warp, night vision, iris wipe,
+lantern cone, water ripple, blob shadow, rainbow road, hit spark, thermal vision
+and chaff interference.
 
-See [factories, usage, costs and limitations](docs/retro-effects.md).
-Materials import from `@zylem/shaders`; the two screen effects import from
+See [first-batch usage](docs/retro-effects.md) and
+[second-batch usage, costs and limitations](docs/retro-effects-batch-2.md).
+Materials and the iris transition import from `@zylem/shaders`; screen effects import from
 `@zylem/shaders/postprocessing`. These are original visual interpretations;
 GPU speedups and original-game fidelity have not been measured.
 
@@ -134,6 +137,7 @@ pnpm install
 pnpm build          # bundle the library to dist/
 pnpm dev            # rebuild the library on change
 pnpm typecheck
+pnpm test:shaders   # generate retro WGSL; run pnpm build first
 pnpm lint
 
 pnpm showcase:dev   # showcase on http://localhost:3332

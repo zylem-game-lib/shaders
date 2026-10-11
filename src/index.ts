@@ -148,3 +148,13 @@ export {
 	createBattleBackdrop, type BattleBackdropOptions, type BattleBackdropUniforms,
 	createPaintingRipple, type PaintingRippleOptions, type PaintingRippleUniforms,
 } from './shaders/retro-world.tsl';
+
+export {
+	createWaterRipple, type WaterRippleOptions, type WaterRippleUniforms,
+	createBlobShadow, type BlobShadowOptions, type BlobShadowUniforms,
+	createRainbowRoad, type RainbowRoadOptions, type RainbowRoadUniforms,
+	createHitSpark, type HitSparkOptions, type HitSparkUniforms,
+} from './shaders/retro-vfx.tsl';
+export {
+	createIrisTransition, type IrisTransitionOptions, type IrisTransitionUniforms, type IrisTransition,
+} from './shaders/iris-transition.tsl';

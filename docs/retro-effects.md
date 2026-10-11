@@ -18,10 +18,10 @@ complete scripted sequences. No original game art is included.
 | 17 | `createFuzzyScreenEffect` | Stage postprocessing; fade `strength` after the status effect ends. | One warped input sample. Arbitrary composed input may require an intermediate render target. |
 | 87 | `createNightVisionEffect` | Stage postprocessing while goggles are active. | Luminance remap, grain hash and vignette. No history buffer; cannot reveal geometry the scene never rendered. |
 
-The catalog still contains exactly 100 ideas. The eight rows above have a first
-implementation, with composition limits stated here; the other ideas remain a
-backlog. Existing ability effects can supply parts of later spells, but are not
-counted as complete catalog implementations.
+The catalog still contains exactly 100 ideas. This page documents the first
+eight components; the [second batch](retro-effects-batch-2.md) adds eight more,
+bringing coverage to 16 entries. Existing ability effects can supply parts of
+later spells, but are not counted as complete catalog implementations.
 
 ## Material usage
 
@@ -99,14 +99,14 @@ internal clock; opacity, progress and object motion are controlled by the game.
 
 Open the **Retro Game Effects** section:
 
-- `/palette-cycle`: shaded original sprite and strength/speed controls.
-- `/ghost`: same sprite with opaque facial details over colored bars.
-- `/power-bomb`: lifetime scrubber, including both invisible endpoints.
-- `/battle-backdrop`: palette, frequency, distortion and speed controls.
-- `/painting-ripple`: angled 48×48 subdivided checker plane.
-- `/retro-metal`: rotating knot to inspect highlight motion.
-- `/fuzzy-screen`: moving sphere and straight vertical edges.
-- `/night-vision`: colored objects at different light levels.
+- `/demos/palette-cycle`: shaded original sprite and strength/speed controls.
+- `/demos/ghost`: same sprite with opaque facial details over colored bars.
+- `/demos/power-bomb`: lifetime scrubber, including both invisible endpoints.
+- `/demos/battle-backdrop`: palette, frequency, distortion and speed controls.
+- `/demos/painting-ripple`: angled 48×48 subdivided checker plane.
+- `/demos/retro-metal`: rotating knot to inspect highlight motion.
+- `/demos/fuzzy-screen`: moving sphere and straight vertical edges.
+- `/demos/night-vision`: colored objects at different light levels.
 
 The showcase generates its small sprite and mask locally and disposes them on
 stage teardown. No network image load is needed.
