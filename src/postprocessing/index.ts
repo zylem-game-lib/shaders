@@ -19,3 +19,8 @@ export {
 	type RetroOptions,
 } from './retro';
 export type { ZylemPostEffect } from '../types';
+
+export {
+	createFuzzyScreenEffect, type FuzzyScreenOptions, type FuzzyScreenUniforms, type FuzzyScreenEffect,
+	createNightVisionEffect, type NightVisionOptions, type NightVisionUniforms, type NightVisionEffect,
+} from './retro-game';

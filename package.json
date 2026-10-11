@@ -35,14 +35,15 @@
   },
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "build": "tsup",
     "prepublishOnly": "NODE_ENV=production tsup",
     "dev": "tsup --watch",
     "lint": "biome check src",
-    "typecheck": "tsgo --noEmit",
+    "typecheck": "tsc --noEmit",
     "showcase:dev": "pnpm --filter @zylem/shader-showcase dev",
     "showcase:build": "pnpm --filter @zylem/shader-showcase build",
     "showcase:preview": "pnpm --filter @zylem/shader-showcase preview"

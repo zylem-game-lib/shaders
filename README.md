@@ -46,6 +46,32 @@ All factories accept an options object and return the shader with a `uniforms` b
 
 `createWaterSurface` also returns a `positionNode` that displaces vertices by the wave heightfield, so apply it to a subdivided plane (e.g. `createPlane({ subdivisions: 160, ... })`). Set `waveAmplitude: 0` for a flat, normal-mapped-only surface, and pass `envMap` (a cube texture) to reflect an environment instead of the built-in horizon/zenith sky gradient.
 
+## Ability effects
+
+Eight TSL effects adapted from [AbilityCastingThreeJS](https://github.com/achrefelouafi/AbilityCastingThreeJS):
+`createAbilitySigil`, `createAbilityPortal`, `createAbilityBeam`,
+`createAbilityLightning`, `createAbilityFlame`, `createAbilityBurst`,
+`createAbilityAura`, and `createAbilityCrystal`.
+
+These simplified effects use bounded noise detail and optionally share a small
+lookup from `createAbilityNoiseTexture()`. See [usage, source mapping and
+performance tradeoffs](docs/ability-effects.md) and the **Ability Effects**
+showcase section. Speedups require device measurements; these interpretations
+intentionally reduce visual complexity. MIT attribution ships in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## Retro game effects
+
+The first eight effects from the [100-effect catalog](docs/retro-game-effects.md)
+are available with controls in the **Retro Game Effects** showcase section:
+palette cycling, ghost transparency, Power Bomb expansion, battle backdrop,
+painting ripples, matcap metal, Fuzzy screen warp and night vision.
+
+See [factories, usage, costs and limitations](docs/retro-effects.md).
+Materials import from `@zylem/shaders`; the two screen effects import from
+`@zylem/shaders/postprocessing`. These are original visual interpretations;
+GPU speedups and original-game fidelity have not been measured.
+
 ## Shadertoy transpiler
 
 Turn raw Shadertoy GLSL into a consumable shader at runtime (wraps the three.js addons `Transpiler` + `ShaderToyDecoder` + `TSLEncoder`):
@@ -113,6 +139,9 @@ pnpm lint
 pnpm showcase:dev   # showcase on http://localhost:3332
 pnpm showcase:build
 ```
+
+The showcase uses Vite's module-runner config loader to transform the
+TypeScript plugin exported by `@zylem/ui/vite` on Node 22.12.
 
 The showcase deploys as a Render static site (see [`render.yaml`](./render.yaml));
 the library publishes to npm from `.github/workflows/publish.yml` on a `v*` tag.

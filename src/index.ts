@@ -15,6 +15,22 @@ export type {
 	ZylemTransitionShader,
 } from './types';
 
+// AbilityCastingThreeJS-inspired effects
+export type { AbilityEffectOptions, AbilityEffectUniforms } from './shaders/ability-common.tsl';
+export { createAbilityNoiseTexture } from './shaders/ability-noise-texture';
+export {
+	createAbilitySigil, type AbilitySigilOptions, type AbilitySigilUniforms,
+	createAbilityPortal, type AbilityPortalOptions, type AbilityPortalUniforms,
+	createAbilityBeam, type AbilityBeamOptions, type AbilityBeamUniforms,
+	createAbilityLightning, type AbilityLightningOptions, type AbilityLightningUniforms,
+} from './shaders/ability-vector.tsl';
+export {
+	createAbilityFlame, type AbilityFlameOptions, type AbilityFlameUniforms,
+	createAbilityBurst, type AbilityBurstOptions, type AbilityBurstUniforms,
+	createAbilityAura, type AbilityAuraOptions, type AbilityAuraUniforms,
+	createAbilityCrystal, type AbilityCrystalOptions, type AbilityCrystalUniforms,
+} from './shaders/ability-surface.tsl';
+
 // Shaders
 export { fireTSL } from './shaders/fire.tsl';
 export { starTSL } from './shaders/star.tsl';
@@ -119,3 +135,16 @@ export {
 	type AfterimageEffect,
 	type AfterimageOptions,
 } from './postprocessing/afterimage';
+
+// Retro game catalog: first implementation batch
+export type { RetroAnimationOptions, RetroAnimationUniforms } from './shaders/retro-common.tsl';
+export {
+	createPaletteCycle, type PaletteCycleOptions, type PaletteCycleUniforms,
+	createGhost, type GhostOptions, type GhostUniforms,
+	createRetroMetal, type RetroMetalOptions, type RetroMetalUniforms,
+} from './shaders/retro-character.tsl';
+export {
+	createPowerBomb, type PowerBombOptions, type PowerBombUniforms,
+	createBattleBackdrop, type BattleBackdropOptions, type BattleBackdropUniforms,
+	createPaintingRipple, type PaintingRippleOptions, type PaintingRippleUniforms,
+} from './shaders/retro-world.tsl';
