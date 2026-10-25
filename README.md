@@ -147,7 +147,7 @@ pnpm typecheck
 pnpm test:shaders   # generate retro WGSL; run pnpm build first
 pnpm lint
 
-pnpm showcase:dev   # showcase on http://localhost:3332
+pnpm showcase:dev   # showcase on http://localhost:2077
 pnpm showcase:build
 ```
 

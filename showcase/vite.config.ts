@@ -5,7 +5,7 @@ import solidPlugin from 'vite-plugin-solid';
 import { zylemVersionsPlugin } from '@zylem/ui/vite';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const devPort = Number(process.env.PORT ?? '3332');
+const devPort = Number(process.env.PORT ?? '2077');
 
 export default defineConfig({
 	plugins: [zylemVersionsPlugin(__dirname), solidPlugin()] as any,
@@ -50,7 +50,7 @@ export default defineConfig({
 		exclude: ['@zylem/ui', '@zylem/behaviors', '@zylem/runtime'],
 	},
 	server: {
-		port: Number.isFinite(devPort) ? devPort : 3332,
+		port: Number.isFinite(devPort) ? devPort : 2077,
 		fs: {
 			// Repo root (which owns the shader library source) plus sibling
 			// polyrepo dirs when zw-linked.

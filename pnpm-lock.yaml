@@ -48,11 +48,11 @@ importers:
         specifier: ^0.14.10
         version: 0.14.10(solid-js@1.9.14)
       '@zylem/behaviors':
-        specifier: ^0.8.9
-        version: 0.8.9(three@0.185.1)
+        specifier: ^0.8.11
+        version: 0.8.11(three@0.185.1)
       '@zylem/game-lib':
-        specifier: ^0.9.4
-        version: 0.9.4(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)
+        specifier: ^0.9.6
+        version: 0.9.6(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)
       '@zylem/shaders':
         specifier: link:..
         version: link:..
@@ -944,8 +944,8 @@ packages:
     peerDependencies:
       '@vanilla-extract/css': ^1.0.0
 
-  '@zylem/behaviors@0.8.9':
-    resolution: {integrity: sha512-6MJmVTbgahArC2q6ntz6svUlu1/zGslAmv2l8ZZwrcnua1bAfGCbeYvPFYxerkXq3C2751CuE21sptFyWGU27A==}
+  '@zylem/behaviors@0.8.11':
+    resolution: {integrity: sha512-NWcqjNu6OXfw7iXwh2vzcxJpVtOWQy+cHTaR7j/fKx7hvigu9i6s0IyioYi1aYUOKepP9Vh35+ViSbAnO65T1A==}
     engines: {node: '>=22.12.0', pnpm: '>=10.32.1'}
     peerDependencies:
       three: 0.185.1
@@ -953,16 +953,16 @@ packages:
   '@zylem/bridge@0.1.4':
     resolution: {integrity: sha512-PBOeggDw4NEdQ74j5eFkphyAYYRDUyKmjG7N4WR3kDxOg0oqdJ5+Hhk7GyJ1b0gvez4/Wk5a5mX25/VNy1B7MQ==}
 
-  '@zylem/game-lib@0.9.4':
-    resolution: {integrity: sha512-FQKwT+LXKz+T5i80Oo7yTPxXXSDH7QET31PProY9tiC8QQ20EbGwfYyLTfPXbdIi2DwrHSwTzj+p+AFXNv+/6w==}
+  '@zylem/game-lib@0.9.6':
+    resolution: {integrity: sha512-U+xzoTQj3bv0dn0ukQ6sJXmPng9bj6Fqf86uGGW0COV9bWnddYPLCHwpn6KQKGENTVOBcw048bpbiACVVjm6Ww==}
     peerDependencies:
       howler: ^2.2.4
       nanoid: ^5.1.5
       three: 0.185.1
       valtio: ^2.1.7
 
-  '@zylem/runtime@0.8.8':
-    resolution: {integrity: sha512-u2UNFe/zhvlc0jJZr/gLRDkdc/R7fayQqdqeRNV9mRiV8tFwEhaQX9+yw/Gn2F37dmrXYVtA/z0pDT6A0CKAAQ==}
+  '@zylem/runtime@0.8.13':
+    resolution: {integrity: sha512-jJdP7pT44Wod12qb4e+7GsvK2NHw2Qi2o7NQ2QC3NjpWqoLaCrLJRk1THL3kOMcdB1xIUfttSrkhJ4EpMYJ3Xg==}
     engines: {node: '>=20.10.0'}
 
   '@zylem/ui@0.8.13':
@@ -2155,10 +2155,10 @@ snapshots:
     dependencies:
       '@vanilla-extract/css': 1.21.2
 
-  '@zylem/behaviors@0.8.9(three@0.185.1)':
+  '@zylem/behaviors@0.8.11(three@0.185.1)':
     dependencies:
       '@dgreenheck/three-pinata': 2.0.1(three@0.185.1)
-      '@zylem/runtime': 0.8.8
+      '@zylem/runtime': 0.8.13
       comlink: 4.4.2
       three: 0.185.1
       typescript-fsm: 1.6.0
@@ -2169,12 +2169,12 @@ snapshots:
 
   '@zylem/bridge@0.1.4': {}
 
-  '@zylem/game-lib@0.9.4(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)':
+  '@zylem/game-lib@0.9.6(howler@2.2.4)(nanoid@5.1.16)(three@0.185.1)(valtio@2.3.2)':
     dependencies:
       '@dgreenheck/three-pinata': 2.0.1(three@0.185.1)
       '@sinclair/typebox': 0.34.52
       '@types/howler': 2.2.13
-      '@zylem/behaviors': 0.8.9(three@0.185.1)
+      '@zylem/behaviors': 0.8.11(three@0.185.1)
       '@zylem/bridge': 0.1.4
       comlink: 4.4.2
       howler: 2.2.4
@@ -2190,7 +2190,7 @@ snapshots:
       - '@types/react'
       - react
 
-  '@zylem/runtime@0.8.8': {}
+  '@zylem/runtime@0.8.13': {}
 
   '@zylem/ui@0.8.13(solid-js@1.9.14)':
     dependencies:
