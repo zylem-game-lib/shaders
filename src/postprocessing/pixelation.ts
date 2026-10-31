@@ -45,24 +45,37 @@ export interface PixelationEffect {
 export function createPixelationEffect(
 	options: PixelationOptions = {},
 ): PixelationEffect {
-	const uPixelSize = uniform(options.pixelSize ?? 6);
 	const uNormalEdgeStrength = uniform(options.normalEdgeStrength ?? 0.3);
 	const uDepthEdgeStrength = uniform(options.depthEdgeStrength ?? 0.4);
 
+	// r187 reads `pixelSize` as a number every frame. Edge strengths stay nodes.
+	let pass: { pixelSize: number } | null = null;
+	let pixelSizeValue = options.pixelSize ?? 6;
+	const pixelSize = {
+		get value() {
+			return pixelSizeValue;
+		},
+		set value(next: number) {
+			pixelSizeValue = next;
+			if (pass) pass.pixelSize = next;
+		},
+	};
+
 	const effect: ZylemPostEffect = (_inputNode, ctx) => {
-		return pixelationPass(
+		pass = pixelationPass(
 			ctx.scene,
 			ctx.camera,
-			uPixelSize,
+			pixelSize.value,
 			uNormalEdgeStrength,
 			uDepthEdgeStrength,
 		);
+		return pass;
 	};
 
 	return {
 		effect,
 		uniforms: {
-			pixelSize: uPixelSize,
+			pixelSize,
 			normalEdgeStrength: uNormalEdgeStrength,
 			depthEdgeStrength: uDepthEdgeStrength,
 		},

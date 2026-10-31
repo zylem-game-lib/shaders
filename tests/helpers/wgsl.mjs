@@ -9,6 +9,9 @@ export function buildGraph(shader, geometry = new PlaneGeometry(), instances = 0
 	renderer.toneMapping = NoToneMapping;
 	// Baseline feature profile for source generation only; no device is requested.
 	renderer.hasFeature = () => false;
+	// r187 sets `_bindings` to null until `init()`. NodeBuilder only skips the
+	// shared-group lookup when the field is undefined, so leave it unset.
+	renderer._bindings = undefined;
 	// Conservative source-generation profile for InstancedMesh's uniform-buffer path.
 	// This is not a device query and does not claim GPU support.
 	renderer.backend.capabilities.getUniformBufferLimit = () => 16384;
