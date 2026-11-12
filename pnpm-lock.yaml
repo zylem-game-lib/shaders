@@ -56,8 +56,8 @@ importers:
         specifier: ^0.8.13
         version: 0.8.13(three@0.187.0)
       '@zylem/game-lib':
-        specifier: ^0.9.9
-        version: 0.9.9(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)
+        specifier: ^0.9.10
+        version: 0.9.10(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)
       '@zylem/shaders':
         specifier: link:..
         version: link:..
@@ -172,6 +172,10 @@ packages:
 
   '@babel/runtime@7.29.13':
     resolution: {integrity: sha512-v+oN26xP4YIlQsbQ/CbTH1WG5m/l/DjKKZNy/Kp3f/AFvbgt7Em/D0FeMM3O2hX0YzeN2M16W8lOpyhIkfCBcQ==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/runtime@7.29.14':
+    resolution: {integrity: sha512-Y5tqevQaUAZhhj82BpYMNC1ssvLQTVAfwKdm8iy8qwmhvC2/CpcAu8OC+QEtjM7pMk7knx83u1Qj8gzkicyelw==}
     engines: {node: '>=6.9.0'}
 
   '@babel/template@7.29.7':
@@ -971,8 +975,8 @@ packages:
   '@zylem/bridge@0.9.9':
     resolution: {integrity: sha512-ox66i3uXnxu34kpPQbbHxmV2QJhrOlyfagyLlU9SZTlVSo5sia70XkJF7WwCAm3B54N9KzLZlAHV3qYY3uXftw==}
 
-  '@zylem/game-lib@0.9.9':
-    resolution: {integrity: sha512-kUOZTCH8jS1dFEUzOj+5qUNaYo/Xtozdn5BpQ+cdWBNxcqpXQuPTb0WLR/N2g7HG3JA73hRoJVnrbiz1pb3Hmw==}
+  '@zylem/game-lib@0.9.10':
+    resolution: {integrity: sha512-+WQIUAjOatj5xEO8ollXDdYUCqj986rKiTGHoh8JAc7NkxM34cxWLBqASa4l6wUs929RV7d5XaP5BPrwueYdlA==}
     peerDependencies:
       howler: ^2.2.4
       nanoid: ^5.1.5
@@ -1630,6 +1634,8 @@ snapshots:
 
   '@babel/runtime@7.29.13': {}
 
+  '@babel/runtime@7.29.14': {}
+
   '@babel/template@7.29.7':
     dependencies:
       '@babel/code-frame': 7.29.7
@@ -2207,7 +2213,7 @@ snapshots:
 
   '@zylem/bridge@0.9.9': {}
 
-  '@zylem/game-lib@0.9.9(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)':
+  '@zylem/game-lib@0.9.10(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)':
     dependencies:
       '@dgreenheck/three-pinata': 2.0.1(three@0.187.0)
       '@sinclair/typebox': 0.34.52
@@ -2252,7 +2258,7 @@ snapshots:
 
   automation-events@7.1.19:
     dependencies:
-      '@babel/runtime': 7.29.13
+      '@babel/runtime': 7.29.14
       tslib: 2.9.1
 
   babel-plugin-jsx-dom-expressions@0.40.7(@babel/core@7.29.7):
@@ -2628,7 +2634,7 @@ snapshots:
 
   standardized-audio-context@25.3.77:
     dependencies:
-      '@babel/runtime': 7.29.13
+      '@babel/runtime': 7.29.14
       automation-events: 7.1.19
       tslib: 2.9.1
 
