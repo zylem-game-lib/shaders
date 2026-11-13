@@ -2,7 +2,7 @@ packages:
   - 'showcase'
 
 catalog:
-  '@zylem/ui': ^0.9.10
+  '@zylem/ui': ^0.9.11
 
 overrides:
   three: 0.187.0
