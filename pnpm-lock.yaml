@@ -56,8 +56,8 @@ importers:
         specifier: ^0.8.13
         version: 0.8.13(three@0.187.0)
       '@zylem/game-lib':
-        specifier: ^0.9.11
-        version: 0.9.11(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)
+        specifier: ^0.9.12
+        version: 0.9.12(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)
       '@zylem/shaders':
         specifier: link:..
         version: link:..
@@ -990,8 +990,8 @@ packages:
   '@zylem/bridge@0.9.10':
     resolution: {integrity: sha512-7QTzNug2Fed+lmVPeNPQgcZaU93ucykXwtfIrGYWUHNTh0C6p2RGuOGq883Mp64Br5OIDSpXDrwN6aNPf3cJKA==}
 
-  '@zylem/game-lib@0.9.11':
-    resolution: {integrity: sha512-KTkEVt+U5vfflAFLW/BJ3bIIPZb7tlU4RFCmVWdbB6VtUJEKgV8EZe+0Qeu5jwBNCgkbA06pChsIYwBMe9EnjA==}
+  '@zylem/game-lib@0.9.12':
+    resolution: {integrity: sha512-px9PkW2GJUilHwakamgaBw84q4zoQhFqac3aceO3qUVEic3mkE1PRnxRbBtI95ugb7bK5iivlWrhk4QJsXSYKQ==}
     peerDependencies:
       howler: ^2.2.4
       nanoid: ^5.1.5
@@ -1424,8 +1424,8 @@ packages:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
 
-  tone@15.5.66:
-    resolution: {integrity: sha512-IfhfkkdIOncjSQa8efsDWK38myptQEcV77B+vB9MA/b2sldHdBx4wE64YLdyxtZVuJxvFwn8nj7X6QvchxSN9A==}
+  tone@15.5.67:
+    resolution: {integrity: sha512-UgvWNOj58+4L93UeGxM84iflgCQ79WDjf0OxcDr+FXd4AX9GzeKb9WegN1PLPJrlP3Msl/o4LPlKw7dloYB+pA==}
 
   tree-kill@1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
@@ -2249,7 +2249,7 @@ snapshots:
 
   '@zylem/bridge@0.9.10': {}
 
-  '@zylem/game-lib@0.9.11(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)':
+  '@zylem/game-lib@0.9.12(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)':
     dependencies:
       '@dgreenheck/three-pinata': 2.0.1(three@0.187.0)
       '@recast-navigation/three': 0.44.0(@types/three@0.187.0)(three@0.187.0)
@@ -2265,7 +2265,7 @@ snapshots:
       recast-navigation: 0.44.0
       stats.js: 0.17.0
       three: 0.187.0
-      tone: 15.5.66
+      tone: 15.5.67
       typescript-fsm: 1.6.0
       valtio: 2.3.2
     optionalDependencies:
@@ -2711,7 +2711,7 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.5)
       picomatch: 4.0.5
 
-  tone@15.5.66:
+  tone@15.5.67:
     dependencies:
       standardized-audio-context: 25.3.77
       tslib: 2.9.1
