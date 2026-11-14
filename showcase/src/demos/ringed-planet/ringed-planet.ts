@@ -1,77 +1,84 @@
-/**
- * Ringed Planet — procedural planet surface and ring system from the
- * zylem-planet-demo, set against the starry night skybox.
- */
-import { createCamera, createGame, createStage, Perspectives } from '@zylem/game-lib/core';
-import { createDisk, createSphere } from '@zylem/game-lib/entity';
-import { createPlanetRing, createPlanetSurface, createStarryNight } from '@zylem/shaders';
-import type { ShowcaseDemo } from '../../demo-types';
-import { colorControl, rangeControl } from '../_shared/controls';
+/** Blue ocean world using the reusable Zylem graphics API. Requires game-lib 0.9.12+. */
+import {
+	createCamera,
+	createGame,
+	createStage,
+	Perspectives,
+} from "@zylem/game-lib/core";
+import { createCelestialBody } from "@zylem/game-lib/graphics";
+import { createOrbitPath, OrbitBehavior } from "@zylem/game-lib/behavior";
+import type { ShowcaseDemo } from "../../demo-types";
 
 export default function createDemo(): ShowcaseDemo {
-	const surface = createPlanetSurface();
-	const ring = createPlanetRing();
-	const su = surface.uniforms;
-	const ru = ring.uniforms;
-
-	const planet = createSphere({
+	const planet = createCelestialBody({
+		name: "Zylem",
 		radius: 20,
-		material: { shader: surface },
-	});
-	let rotation = 180;
-	planet.onUpdate(({ me, delta }) => {
-		rotation += delta * 5;
-		me.setRotationDegreesY(rotation);
+		surface: {
+			type: "ocean",
+			oceanColor: "#0864c1",
+			landColor: "#155bb1",
+			oceanCoverage: 0.8,
+		},
+		atmosphere: { color: "#5aafff", thickness: 0.035 },
+		rings: { innerRadius: 25, outerRadius: 36, tilt: -26, color: "#ef493b" },
+		gravity: { surfaceAcceleration: 2.5 },
 	});
 
-	const ringDisk = createDisk({
-		innerRadius: 25,
-		outerRadius: 36,
-		thetaSegments: 64,
-		material: { shader: ring },
-	}).onSetup(({ me }: any) => {
-		me.setRotationDegreesZ(-23);
+	const innerMoon = createCelestialBody({ name: "Inner moon", radius: 1.4, seed: 84, rotationPeriod: 48, surface: { type: "rock", color: "#c4c9d1" } });
+	const outerMoon = createCelestialBody({ name: "Outer moon", radius: 1, seed: 85, rotationPeriod: 71, surface: { type: "rock", color: "#b9beca" } });
+	const innerOrbit = innerMoon.use(OrbitBehavior, {
+		around: planet,
+		path: createOrbitPath({ semiMajorAxis: 39.6, inclination: -26, phase: 35 }),
 	});
+	const outerOrbit = outerMoon.use(OrbitBehavior, {
+		around: planet,
+		path: createOrbitPath({ semiMajorAxis: 48, eccentricity: 0.04, inclination: 26, phase: 210 }),
+	});
+	const bodies = [planet, innerMoon, outerMoon];
+	const orbits = [innerOrbit, outerOrbit];
 
 	const camera = createCamera({
 		perspective: Perspectives.ThirdPerson,
-		position: { x: 0, y: 30, z: -80 },
+		position: { x: 0, y: 25, z: -115 },
 		target: { x: 0, y: 0, z: 0 },
 	});
-
 	const stage = createStage(
 		{
-			backgroundShader: createStarryNight(),
+			defaultLighting: false,
+			background: {
+				type: "space",
+				color: "#02040c",
+				stars: { count: 4500, seed: 42, brightness: 1.5 },
+				sun: {},
+			},
 		},
 		camera,
-	);
-	stage.add(planet);
-	stage.add(ringDisk);
-
-	const game = createGame(
-		{
-			id: 'shader-showcase-ringed-planet',
-		},
-		stage,
+		...bodies,
 	);
 
 	return {
-		game,
+		game: createGame({ id: "shader-showcase-ringed-planet" }, stage),
 		description:
-			'Procedural planet (3D FBM through a three-stop ramp) and a semi-transparent ring system (noisy bands, orbital dust, sparse rocks), from the zylem-planet-demo.',
+			"A blue ocean planet with subtly darker blue-purple land, soft blue clouds, a light-blue atmosphere, and red rings tilted upward to the right. Two natural moons follow crossed orbits; the inner moon travels just outside the ring.",
 		controls: [
-			rangeControl('Planet speed', su.speed, 0, 2, 0.05),
-			rangeControl('Planet noise scale', su.noiseScale, 0.25, 4, 0.05),
-			rangeControl('Planet contrast', su.contrast, 0, 1, 0.02),
-			colorControl('Planet color A', su.colorA),
-			colorControl('Planet color B', su.colorB),
-			colorControl('Planet color C', su.colorC),
-			rangeControl('Ring band frequency', ru.bandFrequency, 4, 64, 1),
-			rangeControl('Ring rock density', ru.rockDensity, 0, 1, 0.02),
-			rangeControl('Ring max alpha', ru.maxAlpha, 0, 1, 0.02),
-			colorControl('Ring color A', ru.colorA),
-			colorControl('Ring color B', ru.colorB),
-			colorControl('Ring rock color', ru.rockColor),
+			{
+				type: "range",
+				label: "Animation speed",
+				min: 0,
+				max: 3,
+				step: 0.05,
+				value: 1,
+				onChange: (value) => { bodies.forEach(body => body.setTimeScale(value)); orbits.forEach(orbit => orbit.setTimeScale(value)); },
+			},
+			{
+				type: "range",
+				label: "Animation time (seconds)",
+				min: 0,
+				max: 150,
+				step: 0.5,
+				value: 0,
+				onChange: (value) => { bodies.forEach(body => body.setTime(value)); orbits.forEach(orbit => orbit.setTime(value)); },
+			},
 		],
 	};
 }
