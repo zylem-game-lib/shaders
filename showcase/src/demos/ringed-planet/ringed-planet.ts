@@ -13,12 +13,12 @@ export default function createDemo(): ShowcaseDemo {
 		name: "Zylem",
 		radius: 20,
 		surface: {
-			oceanColor: "#075daf",
-			landColor: "#454e89",
+			oceanColor: "#0864c1",
+			landColor: "#155bb1",
 			oceanCoverage: 0.8,
 		},
-		atmosphere: { color: "#8edbff", thickness: 0.035 },
-		rings: { innerRadius: 25, outerRadius: 36, tilt: 26, color: "#9cadd2" },
+		atmosphere: { color: "#5aafff", thickness: 0.035 },
+		rings: { innerRadius: 25, outerRadius: 36, tilt: -26, color: "#ef493b" },
 		moons: "crossed",
 	});
 
@@ -44,7 +44,7 @@ export default function createDemo(): ShowcaseDemo {
 	return {
 		game: createGame({ id: "shader-showcase-ringed-planet" }, stage),
 		description:
-			"A blue ocean planet with purple-blue land, drifting clouds, a light-blue atmosphere, and shadowed rings. Two natural moons follow crossed orbits; the inner moon travels just outside the ring.",
+			"A blue ocean planet with subtly darker blue-purple land, soft blue clouds, a light-blue atmosphere, and red rings tilted upward to the right. Two natural moons follow crossed orbits; the inner moon travels just outside the ring.",
 		controls: [
 			{
 				type: "range",
