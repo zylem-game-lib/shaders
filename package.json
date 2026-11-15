@@ -58,7 +58,8 @@
     "@typescript/native-preview": "latest",
     "three": "^0.187.0",
     "tsup": "^8.5.1",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "wrangler": "4.162.0"
   },
   "dependencies": {
     "@types/tsl-textures": "^3.0.0",
