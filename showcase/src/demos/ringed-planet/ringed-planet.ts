@@ -1,4 +1,4 @@
-/** Blue ocean world using the reusable Zylem graphics API. Requires game-lib 0.9.12+. */
+/** Blue ocean world using the reusable Zylem graphics API. Requires game-lib 0.9.13+. */
 import {
 	createCamera,
 	createGame,

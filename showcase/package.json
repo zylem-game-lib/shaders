@@ -16,8 +16,8 @@
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.11.2",
     "@solidjs/router": "^0.14.10",
-    "@zylem/behaviors": "^0.8.13",
-    "@zylem/game-lib": "^0.9.12",
+    "@zylem/behaviors": "^0.8.14",
+    "@zylem/game-lib": "^0.9.13",
     "@zylem/shaders": "link:..",
     "@zylem/ui": "catalog:",
     "howler": "^2.2.4",
