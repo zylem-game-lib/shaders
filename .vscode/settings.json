@@ -1,0 +1,18 @@
+{
+	"window.titleBarStyle": "custom",
+	"workbench.colorCustomizations": {
+		"titleBar.activeBackground": "#ffffff",
+		"titleBar.activeForeground": "#0d47a1",
+		"titleBar.inactiveBackground": "#ffffff",
+		"titleBar.inactiveForeground": "#0d47a199",
+		"titleBar.border": "#1565c0",
+		"statusBar.background": "#ffffff",
+		"statusBar.foreground": "#0d47a1",
+		"statusBar.noFolderBackground": "#ffffff",
+		"activityBar.background": "#e8f1fb",
+		"activityBar.foreground": "#0d47a1",
+		"activityBar.activeBorder": "#1565c0",
+		"activityBarBadge.background": "#1565c0",
+		"activityBarBadge.foreground": "#ffffff"
+	}
+}
