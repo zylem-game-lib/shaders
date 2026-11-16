@@ -59,8 +59,8 @@ importers:
         specifier: ^0.8.14
         version: 0.8.14(three@0.187.0)
       '@zylem/game-lib':
-        specifier: ^0.9.13
-        version: 0.9.13(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)
+        specifier: ^0.9.15
+        version: 0.9.15(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)
       '@zylem/shaders':
         specifier: link:..
         version: link:..
@@ -1388,11 +1388,11 @@ packages:
     peerDependencies:
       three: 0.187.0
 
-  '@zylem/bridge@0.9.10':
-    resolution: {integrity: sha512-7QTzNug2Fed+lmVPeNPQgcZaU93ucykXwtfIrGYWUHNTh0C6p2RGuOGq883Mp64Br5OIDSpXDrwN6aNPf3cJKA==}
+  '@zylem/bridge@0.9.12':
+    resolution: {integrity: sha512-l0mIUYYddpr/EPc4QIPpm1spEaVhhRQlowZ0QJLNg0RwH1oJ7KbrIkdDqiUXCkvQMXdsUQ6Pxzw2CuoyJxaJFg==}
 
-  '@zylem/game-lib@0.9.13':
-    resolution: {integrity: sha512-aww94WYzPHY2cf7CHy1tVtRplPtYS6GUqFrAtkrl7WcjOwPj7wE7RrriAVAcaodvHz2YfWfauG+LvA17ecxrqQ==}
+  '@zylem/game-lib@0.9.15':
+    resolution: {integrity: sha512-3eprRYDALmPGULrd7BOJ7gh4QF7P4VjqxieKI7SB/Qqxp5dIMX/XOkB1DvgJXcNOW411EAYH9pmDdr3o7gg/2A==}
     peerDependencies:
       howler: ^2.2.4
       nanoid: ^5.1.5
@@ -2976,9 +2976,9 @@ snapshots:
       - '@types/react'
       - react
 
-  '@zylem/bridge@0.9.10': {}
+  '@zylem/bridge@0.9.12': {}
 
-  '@zylem/game-lib@0.9.13(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)':
+  '@zylem/game-lib@0.9.15(@types/three@0.187.0)(howler@2.2.4)(nanoid@5.1.16)(playcanvas@2.23.3)(three@0.187.0)(valtio@2.3.2)':
     dependencies:
       '@dgreenheck/three-pinata': 2.0.1(three@0.187.0)
       '@pmndrs/sky': 0.6.0(three@0.187.0)
@@ -2986,7 +2986,7 @@ snapshots:
       '@sinclair/typebox': 0.34.52
       '@types/howler': 2.2.13
       '@zylem/behaviors': 0.8.14(three@0.187.0)
-      '@zylem/bridge': 0.9.10
+      '@zylem/bridge': 0.9.12
       comlink: 4.4.2
       howler: 2.2.4
       idb-keyval: 6.3.0
